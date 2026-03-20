@@ -4,40 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pafina de prueba</title>
+    <title>Pagina de prueba</title>
+    <link rel="stylesheet" href="styles.css">
+
+
 </head>
 
 <body>
-    <form>
+    <div class="contenedor">
         <H1>Mi primera pagina web</H1>
 
-        <label>Nombre: <input type="text" required placeholder="Ingrese su nombre"></label>
-        <br> <br>
+        <form class="Formulario">
+            <div class="fila">
+                <div class="campo">
+                    <label>Nombre: <input type="text" required placeholder="Ingrese su nombre"></label>
+                </div>
+                <div class="campo">
+                    <label>Apellido: <input type="text" required placeholder="Ingrese su Apellido"></label>
 
+                </div>
+            </div>
 
-        <label>
-            Correo: <input type="email" required placeholder="Ingresa tu correo">
-        </label>
-        <br> <br>
+            <div class="fila">
+                <div class="campo">
+                    <label>
+                        Correo: <input type="email" required placeholder="Ingresa tu correo">
+                    </label>
+                </div>
+                <div class="campo">
+                    <label>
+                        contrasenia: <input type="password" minlength="6" maxlength="12" required
+                            placeholder="Ingresa tu correo">
+                    </label>
+                </div>
 
-        <label>
-            contrasenia: <input type="password" minlength="6" maxlength="12" required placeholder="Ingresa tu correo">
-        </label>
-        <br> <br>
-
-        <label>
-            Numero de telefono: <input type="tel" placeholder="Ingresa tu numero de telefono">
-        </label>
-        <br> <br>
-
-        <label>
-            Edad: <input type="number" min="18" max="18" required placeholder="Ingresa tu edad">
-        </label>
-        <br><br>
-        <button type="submit">Enviar</button>
-    </form>
-
-
+            </div>
+            <div class="fila">
+                <div class="campo">
+                    <label>
+                        Numero de telefono: <input type="tel" placeholder="Ingresa tu numero de telefono">
+                    </label>
+                </div>
+            </div>
+            <label>
+                Edad: <input type="number" min="18" max="18" required placeholder="Ingresa tu edad">
+            </label>
+            <div class="button">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
