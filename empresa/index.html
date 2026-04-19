@@ -1,66 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FidelX</title>
+    <title>Fidelia | Potencia la Lealtad de tus Clientes</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Se recomienda usar una fuente de Google Fonts para un toque profesional 
+-->
+    <link 
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
+    <!-- Barra de Navegación -->
     <header>
-        <h1>FidelX software de fidelizacion</h1>
-        <nav>
-            <a href=#Inicio>Inicio</a>
-            <a href=#Servicios>Servicios</a>
-            <a href=#Acercadenosotros>Acerca de nosotros</a>
-            <a href=#Contacto>contacto</a>
-        </nav>
+        <div class="container header-content">
+            <div class="logo">Fidelia</div>
+            <nav>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto" class="btn-nav">Comenzar</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="Inicio">
-            <h2>Bienvenidos</h2>
 
-            <h3>Haz que tus clientes sean leales</h3>
-            <p>Somos un software de fidelizacion de clientes.</p>
-        </section>
-        <section id="Servicios">
-            <h2>Servicios</h2>
-            <p>Contamos con el servicio de fidelizacion de clientes que cuenta con registro de la tienda y tus clientes.</p>
-            <p><strong>Telefono</strong> 6871237711</p>
-            <p><strong>Correo</strong> tadeo@gmail.com</p>
-        </section>
-        <section id="Acercadenosotros">
-            <h2>Acerca de nosotros</h2>
-            <p>Somos una empresa internacional con sede en Cubilete, Batamote y las berrys.</p>
-            <p><strong>Telefono</strong> 6871237711</p>
-            <p><strong>Correo</strong> tadeo@gmail.com</p>
-        </section>
-        <section id="Contacto">
-            <h2>Contacto</h2>
-            <p><strong>Direccion</strong> Cubilete, Guasave, Sinaloa, Mexico</p>
-            <p><strong>Telefono</strong> 6871237711</p>
-            <p><strong>Correo</strong> tadeo@gmail.com</p>
-        </section>
-        <form>
+    <!-- Sección Principal / Héroe -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Transforma Clientes en Fans Leales.</h1>
+            <p class="subtitle">Implementa programas de fidelidad inteligentes que 
+aumentan el valor de vida del cliente (LTV).</p>
+            <a href="#contacto" class="btn-principal">Solicitar Demostración 
+Gratuita</a>
+        </div>
+    </section>
 
-            <label>Nombre
-                <input type="text" required>
-            </label>
-            <label>Correo
-                <input type="text" required>
-            </label>
-            <label>Mensaje
-                <input type="text" required>
-            </label>
-            <button type="submit">Enviar</button>
-        </form>
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2>Nuestros Pilares de Fidelización</h2>
+            <div class="card-container">
+                
+                <div class="card">
+                    <i class="icon">⭐</i>
+                    <h3>Puntos y Recompensas</h3>
+                    <p>Sistema de acumulación de puntos intuitivo que motiva la 
+recurrencia de compra.</p>
+                </div>
 
+                <div class="card">
+                    <i class="icon">📅</i>
+                    <h3>Eventos Exclusivos</h3>
+                    <p>Organiza eventos y lanzamientos solo para tus miembros más 
+valiosos.</p>
+                </div>
 
-    </main>
+                <div class="card">
+                    <i class="icon">📣</i>
+                    <h3>Comunicación Personalizada</h3>
+                    <p>Segmentación avanzada para enviar ofertas y mensajes que 
+realmente importan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>FIDELX 2026 - TODOS LOS DERECHOS RESERVADOS.</footer>
+    <!-- Sección de Beneficios (Por qué Fidelia) -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <div class="beneficio-item">
+                <h3>💰 Aumenta el LTV</h3>
+                <p>Al hacer que tus clientes vuelvan, incrementas su valor a largo 
+plazo de forma comprobada.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>🛡️ Reduce la Fuga</h3>
+                <p>Una comunidad fuerte reduce la posibilidad de que los clientes 
+busquen alternativas.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>📣 Marketing Orgánico</h3>
+                <p>Clientes felices se convierten en tus mejores promotores y 
+embajadores de marca.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros / CTA Final -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <div class="texto-nosotros">
+                <h2>¿Listo para Construir una Comunidad Leal?</h2>
+                <p>En Fidelia, no solo gestionamos programas; creamos relaciones 
+duraderas entre tu marca y tus clientes. Deja de tratar con transacciones y empieza 
+a generar vínculos emocionales.</p>
+                <a href="#contacto" class="btn-principal secundario">Hablar con un 
+Experto</a>
+            </div>
+            <!-- Se puede añadir una imagen o gráfico aquí en un diseño real -->
+            <div class="placeholder-image"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>¿Tienes Preguntas?</h2>
+            <p class="sub-titulo">Cuéntanos sobre tus objetivos de fidelización y 
+te mostraremos cómo podemos ayudarte.</p>
+            <form class="formulario-contacto">
+                <input type="text" placeholder="Tu Nombre Completo" required>
+                <input type="email" placeholder="Tu Correo Electrónico Profesional" 
+required>
+                <textarea placeholder="Cuéntanos sobre tu negocio y tus retos de 
+lealtad..."></textarea>
+                <button type="submit" class="btn-principal">Enviar 
+Consulta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fidelia. Todos los derechos reservados. | Especialistas 
+en Lealtad de Marca.</p>
+        </div>
+    </footer>
+
 </body>
-
 </html>
