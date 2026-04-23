@@ -1,86 +1,229 @@
 
-/* Reset básico */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #2c5282 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
 }
-/* Contenedor principal del formulario */
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .container {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 50px 50px;
+    border-radius: 24px;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
     width: 100%;
-    max-width: 500px; /* Limita el ancho del formulario */
+    max-width: 520px;
+    position: relative;
+    z-index: 1;
 }
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 header h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
+
 header p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
 }
-/* Estilo para el Fieldset (Agrupación) */
+
 fieldset {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 6px;
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+fieldset::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+legend {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0 0 15px 0;
+    display: block;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
-legend {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #0056b3;
-    padding: 0 10px;
+
+.form-group:last-of-type {
+    margin-bottom: 0;
 }
-/* Estilo para cada grupo de campo (Label + Input) */
-.form-group {
-    margin-bottom: 15px;
-}
+
 .form-group label {
-    display: block; /* Hace que la etiqueta ocupe su propia línea */
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #334155;
+    font-size: 14px;
+    letter-spacing: -0.2px;
 }
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"],
 .form-group input[type="tel"],
 .form-group input[type="number"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Crucial para que el padding no agrande el ancho */
-    transition: border-color 0.3s;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #1e293b;
 }
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
 .form-group input:focus {
-    border-color: #007bff; /* Color al enfocar */
+    border-color: #3b82f6;
     outline: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
 }
-/* Botón de envío */
+
+.form-group input:hover:not(:focus) {
+    border-color: #cbd5e1;
+}
+
 .submit-btn {
-    display: block; /* Hace que el botón ocupe todo el ancho */
+    display: block;
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
+    padding: 16px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.3px;
+    position: relative;
+    overflow: hidden;
 }
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
 .submit-btn:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 10px 10px -5px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    .container {
+        padding: 35px 25px;
+    }
+    
+    header h1 {
+        font-size: 26px;
+    }
+    
+    fieldset {
+        padding: 20px;
+    }
 }
