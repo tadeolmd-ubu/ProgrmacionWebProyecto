@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - FidelX</title>
+
+    <!-- Estilos generales -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
+
+    <!-- HEADER: aquí básicamente puse el título del sistema y el menú -->
     <header>
         <h1>FidelX - Sistema de Lealtad</h1>
         <nav>
             <ul>
+                <!-- navegación entre páginas -->
                 <li><a href="../html/index.html" class="active">Inicio</a></li>
                 <li><a href="../html/servicios.html">Servicios</a></li>
                 <li><a href="../html/acercanosotros.html">Acerca de Nosotros</a></li>
                 <li><a href="../html/instalaciones.html">Plataforma</a></li>
                 <li><a href="../html/contacto.html">Contacto</a></li>
             </ul>
-        </nav> 
-    </header>   
+        </nav>
+    </header>
 
     <main>
+
+        <!-- HERO: sección principal con carrusel -->
         <section id="Inicio" class="hero">
             <div class="slider-contenedor">
+                <!-- imágenes que van cambiando -->
                 <img src="../img/imgPuntos.png" class="slide slide-active">
                 <img src="../img/imgEventos.png" class="slide">
                 <img src="../img/imgComunidad.png" class="slide">
 
+                <!-- botones para mover el slider -->
                 <button id="prev">&#10094;</button>
                 <button id="next">&#10095;</button>
             </div>
+
+            <!-- texto encima del slider -->
             <div class="overlay">
                 <div class="hero-texto">
                     <h2>Transforma Clientes en Fans Leales</h2>
@@ -43,9 +56,12 @@
             </div>
         </section>
 
+        <!-- SERVICIOS: aquí muestro lo que ofrece el sistema -->
         <section id="servicios">
             <h2>Servicios</h2>
             <div class="servicios-contenedor">
+
+                <!-- cada card es un servicio -->
                 <div class="card">
                     <h3>Puntos y Recompensas</h3>
                     <p>Sistema de acumulación de puntos intuitivo que motiva la recurrencia de compra.</p>
@@ -63,16 +79,21 @@
                     <p>Segmentación avanzada para enviar ofertas y mensajes que realmente importan.</p>
                     <img src="../img/imgPersonalizada.png" class="img-servicio" width="200px" height="200px">
                 </div>
-            </div>  
+            </div>
         </section>
 
+        <!-- ACERCA DE: info del proyecto + tecnologías -->
         <section id="acercanosotros">
             <h2>Acerca de Nosotros</h2>
             <div class="acerca-flex">
+
+                <!-- texto descriptivo -->
                 <div class="acerca-texto">
                     <p>En FidelX, no solo gestionamos programas; creamos relaciones duraderas entre tu marca y tus clientes.</p>
                     <p>Deja de tratar con transacciones y empieza a generar vínculos emocionales.</p>
                 </div>
+
+                <!-- tecnologías (cada una tiene info oculta en data-info) -->
                 <div class="acerca-contenedor">
                     <div class="tech" data-info="HTML es el lenguaje base para estructurar páginas web">
                         <img src="../img/javascript-logo-1.webp">
@@ -95,33 +116,42 @@
                     </div>
                 </div>
             </div>
+
+            <!-- aquí se muestra la info cuando haces click -->
             <div id="info-tech" class="info-tech"></div>
         </section>
-         
+
+        <!-- CONTACTO: sección para capturar datos -->
         <section id="contacto">
             <h2>Contacto</h2>
             <p><strong>Dirección:</strong> Ciudad de México, México</p>
             <p><strong>Teléfono:</strong> 555-123-4567</p>
             <p><strong>Correo:</strong> contacto@fidelx.com</p>
+
             <h3>Envíanos un mensaje</h3>
 
+            <!-- formulario básico -->
             <form id="form" class="form">
                 <fieldset>
                     <legend>Información Personal</legend>
+
                     <div class="fila">
                         <label>Nombre:
                             <input type="text" name="nombre" placeholder="Tu Nombre">
                         </label>
                         <br>
+
                         <label>Correo:
                             <input type="email" name="email" placeholder="correo@empresa.com">
                         </label>
                         <br>
+
                         <label>Teléfono:
                             <input type="tel" name="telefono" placeholder="555-123-4567">
                         </label>
                         <br>
                     </div>
+
                     <button type="submit">Enviar Mensaje</button>
                 </fieldset>
             </form>
@@ -129,22 +159,30 @@
     </main>
 
     <hr>
-  
+
+    <!-- footer simple -->
     <footer>2026 FidelX - Todos los derechos reservados</footer>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Slider: carrusel de imágenes con navegación manual y automático
+
+            // ================= SLIDER =================
+            // aquí hago que el carrusel funcione automático y manual
+
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.getElementById('prev');
             const nextBtn = document.getElementById('next');
+
             let currentSlide = 0;
 
             function showSlide(index) {
+
+                // quito la clase activa de todas
                 slides.forEach(slide => {
                     slide.classList.remove('slide-active');
                 });
-                
+
+                // controlo que no se salga del rango
                 if (index >= slides.length) {
                     currentSlide = 0;
                 } else if (index < 0) {
@@ -152,25 +190,32 @@
                 } else {
                     currentSlide = index;
                 }
-                
+
+                // activo la actual
                 slides[currentSlide].classList.add('slide-active');
             }
 
-            if(prevBtn && nextBtn) {
+            if (prevBtn && nextBtn) {
+
+                // botón anterior
                 prevBtn.addEventListener('click', () => {
                     showSlide(currentSlide - 1);
                 });
 
+                // botón siguiente
                 nextBtn.addEventListener('click', () => {
                     showSlide(currentSlide + 1);
                 });
 
+                // cambio automático cada 5 segundos
                 setInterval(() => {
                     showSlide(currentSlide + 1);
                 }, 5000);
             }
 
-            // Tecnologías: mostrar información de cada tecnología al hacer clic
+            // ================= TECNOLOGÍAS =================
+            // cuando haces click muestra info abajo
+
             const techs = document.querySelectorAll(".tech");
             const infoTech = document.getElementById("info-tech");
 
@@ -182,7 +227,9 @@
                 });
             });
 
-            // Zoom: efecto de ampliar imágenes de servicios al hacer clic
+            // ================= IMÁGENES SERVICIOS =================
+            // efecto zoom al hacer click
+
             const imgServicios = document.querySelectorAll(".img-servicio");
 
             imgServicios.forEach(img => {
@@ -191,25 +238,32 @@
                 });
             });
 
-            // Formulario: validar que los campos no estén vacíos antes de enviar
+            // ================= FORMULARIO =================
+            // validación básica
+
             const form = document.querySelector('form');
-            
-            form.addEventListener('submit', function(e) {
+
+            form.addEventListener('submit', function (e) {
+
                 e.preventDefault();
-                
+
                 const nombre = form.querySelector('input[name="nombre"]').value.trim();
                 const email = form.querySelector('input[name="email"]').value.trim();
                 const telefono = form.querySelector('input[name="telefono"]').value.trim();
-                
+
+                // valido que no estén vacíos
                 if (nombre === '' || email === '' || telefono === '') {
                     alert('Todos los campos son obligatorios');
                     return;
                 }
-                
+
+                // si pasa validación
                 alert('Mensaje enviado correctamente');
+
                 form.reset();
             });
         });
     </script>
 </body>
+
 </html>
